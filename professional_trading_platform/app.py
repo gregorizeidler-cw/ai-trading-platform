@@ -20,86 +20,233 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Professional CSS
+# Professional Dark Trading Platform CSS
 st.markdown("""
 <style>
+    /* Dark theme base */
+    .stApp {
+        background-color: #0d1421 !important;
+        color: #ffffff !important;
+    }
+    
+    /* Main container */
+    .main .block-container {
+        background-color: #0d1421 !important;
+        padding-top: 1rem;
+    }
+    
     .main-header {
-        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        background: linear-gradient(135deg, #1a2332 0%, #2d3748 100%);
         padding: 2rem;
         border-radius: 15px;
-        color: white;
+        color: #00ff88;
         text-align: center;
         margin-bottom: 2rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        box-shadow: 0 10px 30px rgba(0,255,136,0.2);
+        border: 1px solid #00ff88;
     }
     
     .agent-card {
-        background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+        background: linear-gradient(145deg, #1a2332 0%, #2d3748 100%);
         padding: 1.5rem;
         border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        border-left: 5px solid #2a5298;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        border-left: 5px solid #00ff88;
         margin: 1rem 0;
-        color: #333;
+        color: #ffffff;
+        border: 1px solid #374151;
     }
     
     .metric-professional {
-        background: white;
+        background: linear-gradient(145deg, #1a2332 0%, #2d3748 100%);
         padding: 1.5rem;
         border-radius: 10px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
         text-align: center;
-        border-top: 3px solid #28a745;
-        color: #333;
+        border-top: 3px solid #00ff88;
+        color: #ffffff;
+        border: 1px solid #374151;
     }
     
     .trading-signal {
-        background: linear-gradient(45deg, #28a745 0%, #20c997 100%);
-        color: white;
+        background: linear-gradient(45deg, #059669 0%, #00ff88 100%);
+        color: #000000;
         padding: 1rem;
         border-radius: 8px;
         margin: 0.5rem 0;
         font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0,255,136,0.3);
     }
     
     .risk-warning {
-        background: linear-gradient(45deg, #dc3545 0%, #fd7e14 100%);
-        color: white;
+        background: linear-gradient(45deg, #dc2626 0%, #ef4444 100%);
+        color: #ffffff;
         padding: 1rem;
         border-radius: 8px;
         margin: 0.5rem 0;
+        box-shadow: 0 4px 12px rgba(220,38,38,0.3);
+    }
+    
+    /* Sidebar styling */
+    .css-1d391kg {
+        background-color: #111827 !important;
     }
     
     .sidebar .sidebar-content {
-        background: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%);
-        color: white;
+        background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+        color: #ffffff;
     }
     
-    /* Fix text visibility */
-    .stSelectbox label, .stMultiSelect label, .stSlider label {
-        color: #333 !important;
+    /* Text visibility improvements */
+    .stSelectbox label, .stMultiSelect label, .stSlider label, .stCheckbox label {
+        color: #ffffff !important;
         font-weight: 600;
+        font-size: 14px;
     }
     
     .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4 {
-        color: #333 !important;
+        color: #ffffff !important;
+    }
+    
+    .stMarkdown p {
+        color: #e5e7eb !important;
+    }
+    
+    /* Input fields */
+    .stSelectbox > div > div {
+        background-color: #374151 !important;
+        color: #ffffff !important;
+        border: 1px solid #6b7280 !important;
+    }
+    
+    .stMultiSelect > div > div {
+        background-color: #374151 !important;
+        color: #ffffff !important;
+        border: 1px solid #6b7280 !important;
     }
     
     /* Tab styling */
     .stTabs [data-baseweb="tab-list"] {
-        background-color: #f8f9fa;
+        background-color: #1f2937;
+        border-radius: 8px;
+        padding: 4px;
     }
     
     .stTabs [data-baseweb="tab"] {
-        color: #333 !important;
-        background-color: white;
-        border-radius: 8px 8px 0 0;
+        color: #9ca3af !important;
+        background-color: transparent;
+        border-radius: 6px;
         margin-right: 4px;
+        padding: 12px 24px;
+        font-weight: 500;
     }
     
     .stTabs [aria-selected="true"] {
-        background-color: #2a5298 !important;
-        color: white !important;
+        background-color: #00ff88 !important;
+        color: #000000 !important;
+        font-weight: 700;
+    }
+    
+    /* Buttons */
+    .stButton > button {
+        background: linear-gradient(45deg, #00ff88 0%, #059669 100%);
+        color: #000000;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        box-shadow: 0 4px 12px rgba(0,255,136,0.3);
+    }
+    
+    .stButton > button:hover {
+        background: linear-gradient(45deg, #059669 0%, #047857 100%);
+        box-shadow: 0 6px 20px rgba(0,255,136,0.4);
+    }
+    
+    /* Metrics styling */
+    [data-testid="metric-container"] {
+        background: linear-gradient(145deg, #1a2332 0%, #2d3748 100%);
+        border: 1px solid #374151;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    [data-testid="metric-container"] > div {
+        color: #ffffff !important;
+    }
+    
+    [data-testid="metric-container"] [data-testid="metric-value"] {
+        color: #00ff88 !important;
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+    }
+    
+    [data-testid="metric-container"] [data-testid="metric-label"] {
+        color: #e5e7eb !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Charts background */
+    .js-plotly-plot {
+        background-color: #1a2332 !important;
+        border-radius: 10px;
+        border: 1px solid #374151;
+    }
+    
+    /* Success/Warning/Error messages */
+    .stSuccess {
+        background-color: #065f46 !important;
+        color: #ffffff !important;
+        border: 1px solid #00ff88 !important;
+    }
+    
+    .stWarning {
+        background-color: #92400e !important;
+        color: #ffffff !important;
+        border: 1px solid #f59e0b !important;
+    }
+    
+    .stError {
+        background-color: #991b1b !important;
+        color: #ffffff !important;
+        border: 1px solid #ef4444 !important;
+    }
+    
+    /* Slider styling */
+    .stSlider > div > div > div > div {
+        color: #00ff88 !important;
+    }
+    
+    /* Progress bars */
+    .stProgress > div > div > div > div {
+        background-color: #00ff88 !important;
+    }
+    
+    /* Data tables */
+    .dataframe {
+        background-color: #1a2332 !important;
+        color: #ffffff !important;
+        border: 1px solid #374151 !important;
+    }
+    
+    /* Scrollbars */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #1f2937;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #00ff88;
+        border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #059669;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -117,9 +264,12 @@ if 'agents_active' not in st.session_state:
 # Main header
 st.markdown("""
 <div class="main-header">
-    <h1>🏦 Professional Multi-Agent Trading Platform</h1>
-    <p>Enterprise-Grade AI Trading System with 12+ Specialized Agents</p>
-    <p>Real-time Analysis • Multi-Asset Support • Professional Risk Management</p>
+    <h1>💹 PROFESSIONAL TRADING TERMINAL</h1>
+    <p>🤖 Enterprise AI Trading System • 12+ Specialized Agents • Real-Time Analysis</p>
+    <p>📊 Multi-Asset • 🕐 Multi-Timeframe • ⚡ Professional Risk Management</p>
+    <p style="font-size: 0.9em; margin-top: 1rem; opacity: 0.8;">
+        Portfolio Value: $2,847,392 • Today's P&L: +$23,847 (+0.84%) • Active Positions: 47
+    </p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -307,9 +457,12 @@ with tab1:
             yaxis_title="Normalized Price",
             height=500,
             hovermode='x unified',
-            plot_bgcolor='white',
-            paper_bgcolor='white',
-            font=dict(color='#333')
+            plot_bgcolor='#1a2332',
+            paper_bgcolor='#1a2332',
+            font=dict(color='#ffffff'),
+            xaxis=dict(gridcolor='#374151', color='#ffffff'),
+            yaxis=dict(gridcolor='#374151', color='#ffffff'),
+            title_font=dict(color='#00ff88', size=18)
         )
         
         st.plotly_chart(fig, use_container_width=True)
@@ -328,9 +481,10 @@ with tab1:
                            title="Asset Correlation Matrix",
                            color_continuous_scale="RdBu")
         fig_corr.update_layout(
-            plot_bgcolor='white',
-            paper_bgcolor='white',
-            font=dict(color='#333')
+            plot_bgcolor='#1a2332',
+            paper_bgcolor='#1a2332',
+            font=dict(color='#ffffff'),
+            title_font=dict(color='#00ff88', size=16)
         )
         st.plotly_chart(fig_corr, use_container_width=True)
 
@@ -445,14 +599,20 @@ with tab3:
         sma_20 = pd.Series(closes).rolling(20).mean()
         sma_50 = pd.Series(closes).rolling(50).mean()
         
-        fig.add_trace(go.Scatter(x=dates, y=sma_20, name="SMA 20", line=dict(color="orange")))
-        fig.add_trace(go.Scatter(x=dates, y=sma_50, name="SMA 50", line=dict(color="blue")))
+        fig.add_trace(go.Scatter(x=dates, y=sma_20, name="SMA 20", line=dict(color="#00ff88", width=2)))
+        fig.add_trace(go.Scatter(x=dates, y=sma_50, name="SMA 50", line=dict(color="#f59e0b", width=2)))
         
         fig.update_layout(
             title=f"{selected_chart_asset} - Advanced Technical Analysis",
             yaxis_title="Price",
             xaxis_title="Date",
-            height=600
+            height=600,
+            plot_bgcolor='#1a2332',
+            paper_bgcolor='#1a2332',
+            font=dict(color='#ffffff'),
+            xaxis=dict(gridcolor='#374151', color='#ffffff'),
+            yaxis=dict(gridcolor='#374151', color='#ffffff'),
+            title_font=dict(color='#00ff88', size=18)
         )
         
         st.plotly_chart(fig, use_container_width=True)
@@ -495,9 +655,10 @@ with tab4:
                         title="Portfolio Concentration",
                         color_discrete_sequence=px.colors.qualitative.Set3)
         fig_pos.update_layout(
-            plot_bgcolor='white',
-            paper_bgcolor='white',
-            font=dict(color='#333')
+            plot_bgcolor='#1a2332',
+            paper_bgcolor='#1a2332',
+            font=dict(color='#ffffff'),
+            title_font=dict(color='#00ff88', size=16)
         )
         st.plotly_chart(fig_pos, use_container_width=True)
     
@@ -512,10 +673,20 @@ with tab4:
         ]
         
         for alert in risk_alerts:
-            color = "orange" if "Warning" in alert["level"] else "red" if "Alert" in alert["level"] else "green"
+            if "Warning" in alert["level"]:
+                bg_color = "linear-gradient(45deg, #f59e0b 0%, #d97706 100%)"
+                border_color = "#f59e0b"
+            elif "Alert" in alert["level"]:
+                bg_color = "linear-gradient(45deg, #dc2626 0%, #b91c1c 100%)"
+                border_color = "#dc2626"
+            else:
+                bg_color = "linear-gradient(45deg, #059669 0%, #047857 100%)"
+                border_color = "#059669"
+            
             st.markdown(f"""
-            <div style="background-color: {color}; color: white; padding: 0.5rem; margin: 0.5rem 0; border-radius: 5px;">
-                {alert['level']}: {alert['message']}
+            <div style="background: {bg_color}; color: white; padding: 0.8rem; margin: 0.5rem 0; border-radius: 8px; border: 1px solid {border_color}; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <strong>{alert['level']}</strong><br>
+                {alert['message']}
             </div>
             """, unsafe_allow_html=True)
 
@@ -577,10 +748,19 @@ with tab6:
         benchmark_values = 2800000 + np.cumsum(np.random.randn(len(dates)) * 3000)
         
         fig_perf = go.Figure()
-        fig_perf.add_trace(go.Scatter(x=dates, y=portfolio_values, name="Portfolio", line=dict(color="blue")))
-        fig_perf.add_trace(go.Scatter(x=dates, y=benchmark_values, name="Benchmark (SPY)", line=dict(color="gray")))
+        fig_perf.add_trace(go.Scatter(x=dates, y=portfolio_values, name="Portfolio", line=dict(color="#00ff88", width=3)))
+        fig_perf.add_trace(go.Scatter(x=dates, y=benchmark_values, name="Benchmark (SPY)", line=dict(color="#9ca3af", width=2)))
         
-        fig_perf.update_layout(title="Portfolio vs Benchmark Performance", height=400)
+        fig_perf.update_layout(
+            title="Portfolio vs Benchmark Performance", 
+            height=400,
+            plot_bgcolor='#1a2332',
+            paper_bgcolor='#1a2332',
+            font=dict(color='#ffffff'),
+            xaxis=dict(gridcolor='#374151', color='#ffffff'),
+            yaxis=dict(gridcolor='#374151', color='#ffffff'),
+            title_font=dict(color='#00ff88', size=16)
+        )
         st.plotly_chart(fig_perf, use_container_width=True)
     
     with perf_col2:
