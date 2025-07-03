@@ -304,7 +304,7 @@ graph TD
 
 | Step | Command | Description |
 |------|---------|-------------|
-| **1️⃣** | `git clone https://github.com/gregorizeidler-cw/ai-trading-platform.git` | Clone repository |
+| **1️⃣** | `git clone https://github.com/gregorizeidler/ai-trading-platform.git` | Clone repository |
 | **2️⃣** | `cd ai-trading-platform && python -m venv venv` | Create environment |
 | **3️⃣** | `source venv/bin/activate` (Linux/Mac) or `venv\Scripts\activate` (Windows) | Activate environment |
 | **4️⃣** | `pip install -r requirements.txt` | Install dependencies |
@@ -552,7 +552,7 @@ AGENT_SETTINGS = {
 
 ```bash
 # 🔧 Development Setup
-git clone https://github.com/gregorizeidler-cw/ai-trading-platform.git
+git clone https://github.com/gregorizeidler/ai-trading-platform.git
 cd ai-trading-platform
 
 # Install development dependencies
@@ -586,11 +586,11 @@ mypy ai_agents/ strategies/ risk_management/
 
 ## 👨‍💻 **Developer**
 
-**Developed by [Gregori Zeidler](https://github.com/gregorizeidler-cw)**
+**Developed by [Gregori Zeidler](https://github.com/gregorizeidler)**
 
 *Professional AI Trading Platform • Enterprise-Grade Architecture • 15+ AI Agents*
 
-[![GitHub](https://img.shields.io/badge/GitHub-gregorizeidler--cw-blue?style=for-the-badge&logo=github)](https://github.com/gregorizeidler-cw)
+[![GitHub](https://img.shields.io/badge/GitHub-gregorizeidler--blue?style=for-the-badge&logo=github)](https://github.com/gregorizeidler)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/gregorizeidler)
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:gregori.zeidler@example.com)
 
